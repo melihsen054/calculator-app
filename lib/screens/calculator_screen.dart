@@ -4,6 +4,7 @@ import 'package:math_expressions/math_expressions.dart';
 import 'package:provider/provider.dart';
 import '../models/theme_notifier.dart';
 import '../services/history_service.dart';
+import 'converter_screen.dart';
 
 // ─── Button layout ────────────────────────────────────────────────────────────
 
@@ -372,6 +373,16 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
+              IconButton(
+                icon: const Icon(Icons.swap_horiz, size: 20),
+                color: cs.primary,
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const ConverterScreen()),
+                ),
+                splashRadius: 20,
+              ),
               IconButton(
                 icon: const Icon(Icons.history, size: 20),
                 color: cs.primary,
